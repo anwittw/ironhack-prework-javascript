@@ -3,9 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Mars Rover</title>
-  <script src="javascripts/app.js"></script>
+  <link href="styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  
+  <section id="cockpit">
+    <div class="cockpit-container">
+      <div id="turn-left" class="floated-button">TURN LEFT</div>
+      <div id="move-forward" class="floated-button">MOVE</div>
+      <div id="turn-right" class="floated-button">TURN RIGHT</div>
+    </div>
+  </section>
+  <section id="map">
+    <div id="grid-container"></div>
+    
+  </section>
+  <script src="javascripts/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,77 @@
+
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou');
+
+/* Section Cockpit */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #FCFBEF;
+  width: 100%;
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+#cockpit {
+  width:100%;
+}
+
+.cockpit-container {
+  height: 150px;
+  width: 57%;
+  margin: 30px auto;
+  border: 1px solid #000;
+  border-radius: 40px;
+  box-shadow: 2px 6px #888888;
+  background-image: url(images/metal-texture-background.jpg);
+  background-position: center;
+
+}
+
+.floated-button {
+  float: left;
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+  margin-top: 50px;
+  margin-left: 30px;
+  border-radius: 25px;
+  box-shadow: 2px 6px #888888
+}
+
+.floated-button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#turn-left {
+  background-color:#2F4D22;
+  color:white;
+  font-weight: 500;
+}
+
+#turn-right {
+  background-color: #2F4D22;
+  color:white;
+  font-weight: 500;
+}
+
+#move-forward {
+  background-color: #172E72;
+  color:white;
+  font-weight: 500;
+  position: relative;
+  bottom: 30px;
+}
+
+
+.cockpit-container::after {
+  content: "";
+  clear: both;
+  display: block;
+  text-align:center;
+}
