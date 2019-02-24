@@ -1,5 +1,4 @@
-// Rover Object Goes Here
-// ======================
+// Rover Object
 let rover = {
   x: 0,
   y: 0,
@@ -39,24 +38,23 @@ let rover = {
         break;
       }
       console.log('Rover current Direction: ' + this.currentDirection)
+  },
+  moveRover: function() {
+    switch (this.currentDirection) {
+      case "N":
+      this.y = this.y + 1;
+      break;
+      case "E":
+      this.x = this.x + 1;
+      break;
+      case "S":
+      this.y = this.y - 1;
+      break;
+      case "W":
+      this.x = this.x - 1;
+      break;
     }
+    this.updateCurrentPosition()
   }
-// ======================
-function turnLeft(rover) {
+  }
 
-  console.log("turnLeft was called!");
-}
-
-function turnRight(rover) {
-  console.log("turnRight was called!");
-}
-
-function moveForward(rover) {
-  console.log("moveForward was called")
-}
-
-rover.updateCurrentPosition()
-rover.turnRover("left")
-rover.turnRover("left")
-rover.turnRover("left")
-rover.turnRover("left")
