@@ -66,11 +66,11 @@ let rover = {
 // Buttons
 
 document.querySelector('#turn-left').addEventListener('click', function(e) {
-  rover.turnRover("right");
+  rover.turnRover("left");
 })
 
 document.querySelector('#turn-right').addEventListener('click', function(e) {
-  rover.turnRover("left");
+  rover.turnRover("right");
 })
 document.querySelector('#move-forward').addEventListener('click', function(e) {
   rover.moveRover();
