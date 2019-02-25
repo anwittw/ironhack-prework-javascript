@@ -71,3 +71,17 @@ document.querySelector('#turn-right').addEventListener('click', function(e) {
 document.querySelector('#move-forward').addEventListener('click', function(e) {
   rover.moveRover();
 })
+
+
+function buildGrid() {
+  for (i = 0; i < 60; i++) {
+    const newCordinate = document.createElement("div"); 
+    const getGrid = document.getElementById('grid-container');
+    getGrid.appendChild(newCordinate);
+    console.log(i);
+  }
+}
+
+
+
+buildGrid();

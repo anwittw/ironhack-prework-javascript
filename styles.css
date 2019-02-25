@@ -75,3 +75,29 @@ body {
   display: block;
   text-align:center;
 }
+
+#map {
+  width: 100%;
+}
+
+#grid-container {
+  height: 400px;
+  width: 1000px;
+  margin: 0 auto;
+  border: 1px dashed slategray;
+}
+
+
+#grid-container div {
+  float: left;
+  height: 60px;
+  width: 60px;
+  margin: 10px 10px;
+  background-color: grey;
+}
+
+.cordinate-rover {
+  background-color: red;
+  border-radius: 100px; 
+}
+
