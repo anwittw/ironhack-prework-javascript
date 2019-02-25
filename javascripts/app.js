@@ -2,11 +2,10 @@
 let rover = {
   x: 0,
   y: 0,
-  currentPosition: [0,0],
+  currentPosition: "00",
   currentDirection: "N",
   updateCurrentPosition: function() {
-    this.currentPosition[0] = this.x;
-    this.currentPosition[1] = this.y;
+    this.currentPosition = String(this.x) + String(this.y)
     console.log('The current Position is:' + ' x:' + this.x + ' y:' + this.y)
     console.log(this.currentPosition); 
   },
@@ -62,26 +61,50 @@ let rover = {
 // Buttons
 
 document.querySelector('#turn-left').addEventListener('click', function(e) {
-  rover.turnRover("left");
+  rover.turnRover("right");
 })
 
 document.querySelector('#turn-right').addEventListener('click', function(e) {
-  rover.turnRover("right");
+  rover.turnRover("left");
 })
 document.querySelector('#move-forward').addEventListener('click', function(e) {
   rover.moveRover();
+  buildGrid(resetGrid);
 })
 
-
-function buildGrid() {
-  for (i = 0; i < 60; i++) {
-    const newCordinate = document.createElement("div"); 
+function buildGrid(callback) {
+  callback();
+  let ex = 0;
+  let yp = 0;
+  let className = "";
+  for (i = 0; i < 55; i++) {
     const getGrid = document.getElementById('grid-container');
+    const newCordinate = document.createElement("div");
+    className = String(ex) + String(yp);
+    if (rover.currentPosition === className) {
+    newCordinate.setAttribute("class","cordinate-rover");
+    } else {
+    newCordinate.setAttribute("class", className);
+    }
     getGrid.appendChild(newCordinate);
-    console.log(i);
+    ex = ex +1;
+    if (i === 10 || i === 21 || i === 32 || i === 43 ) {
+      ex = 0;
+    }
+    if (i === 10 || i === 21 || i === 32 || i === 43 ) {
+      yp = yp +1;
+    }
   }
 }
 
+function resetGrid() {
+  const getGrid = document.getElementById('grid-container');
+  while (getGrid.firstChild) {
+    getGrid.removeChild(getGrid.firstChild);
+  }
+  console.log("grid reseted");
+  return true
+}
 
+buildGrid(resetGrid);
 
-buildGrid();
