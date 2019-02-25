@@ -39,23 +39,28 @@ let rover = {
       console.log('Rover current Direction: ' + this.currentDirection)
   },
   moveRover: function() {
-    switch (this.currentDirection) {
-      case "N":
-      this.y = this.y + 1;
-      break;
-      case "E":
-      this.x = this.x + 1;
-      break;
-      case "S":
+    let xToLeft = this.x > 0;
+    let xToRight = this.x < 10;
+    let yToTop = this.y > 0;
+    let yToBottom = this.y < 4;
+    switch (true) {
+      case this.currentDirection === "N" && yToTop:
       this.y = this.y - 1;
       break;
-      case "W":
+      case this.currentDirection === "W" && xToLeft:
       this.x = this.x - 1;
       break;
-    }
-    this.updateCurrentPosition()
+      case this.currentDirection === "S" && yToBottom:
+      this.y = this.y + 1;
+      break;
+      case this.currentDirection === "E" && xToRight:
+      this.x = this.x + 1;
+      break;
+      default: alert("Can't leave Grid!");
+    } 
+ this.updateCurrentPosition()
   }
-  }
+}
 
 
 // Buttons
