@@ -93,11 +93,15 @@ body {
   height: 60px;
   width: 60px;
   margin: 10px 10px;
-  background-color: grey;
+  background-image: URL(images/mond.jpg);
+  background-position: center;
 }
 
-.cordinate-rover {
-  background-color: red;
+#grid-container div.cordinate-rover {
+  background-image: URL(images/320px-Mondmobil_\(PR_Neo\).jpg);
+  background-position: center; 
+  background-size:cover;
+
   border-radius: 100px; 
 }
 
